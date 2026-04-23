@@ -75,4 +75,24 @@ class LinkedList{ // class untuk linked list
         return (current != NULL);
     }
 
+    bool delNode(int nim) // fungsi untuk menghapus node dengan nomor mahasiswa tertentu
+    {
+        Node * previous, * current;
+        if (!search(nim, previous, current)) 
+        {
+            return false; // jika node tidak ditemukan, kembalikan false
+        }
+
+        if (current == START) // jika node yang akan dihapus adalah node pertama (START)
+        {
+            START = START->next; // update START ke node berikutnya
+        }
+        else
+        {
+            previous->next = current->next; // update pointer next pada node sebelumnya ke node setelah current
+        }
+        delete current; // menghapus node current dari memori
+        return true; // kembalikan true setelah berhasil menghapus node
+    }
+
 };
