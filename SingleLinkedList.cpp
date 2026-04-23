@@ -19,5 +19,13 @@ class LinkedList{ // class untuk linked list
         START = NULL; //untuk menginisialisasi START dengan NULL
     }
 
-    
+    void addNode() // fungsi untuk menambahkan node baru ke dalam linked list
+    {
+        int nim; // variabel untuk menyimpan nomor mahasiswa yang akan dimasukkan ke dalam node baru
+        cout << "\nMasukkan Nomor Mahasiswa: ";
+        cin >> nim;
+
+        
+    }
+
 };
