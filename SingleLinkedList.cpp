@@ -10,5 +10,14 @@ class Node { // class untuk node
 };
 
 class LinkedList{ // class untuk linked list
+    Node * START; // pointer untuk menyimpan alamat node pertama dalam linked list
+
+    public: // public agar bisa diakses dari luar class
+    
+    LinkedList()
+    {
+        START = NULL; //untuk menginisialisasi START dengan NULL
+    }
+
     
 };
