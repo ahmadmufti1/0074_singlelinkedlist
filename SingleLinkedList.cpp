@@ -56,4 +56,9 @@ class LinkedList{ // class untuk linked list
         previous->next = nodeBaru;
     }
 
+    bool listEmpty() // fungsi untuk memeriksa apakah linked list kosong atau tidak
+    {
+        return START == NULL; // mengembalikan true jika START bernilai NULL, artinya linked list kosong
+    }
+
 };
