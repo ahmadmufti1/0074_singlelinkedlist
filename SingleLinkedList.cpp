@@ -25,7 +25,35 @@ class LinkedList{ // class untuk linked list
         cout << "\nMasukkan Nomor Mahasiswa: ";
         cin >> nim;
 
+        Node * nodeBaru = new Node(); // membuat node baru dengan menggunakan operator new
+        nodeBaru->noMhs = nim; // mengisi data nomor mahasiswa pada node baru dengan nilai yang dimasukkan oleh user
         
+        if (START == NULL || nim <= START->noMhs) 
+        {
+            if (START != NULL && nim == START->noMhs) {
+                cout << "\nDuplikasi noMhs tidak dijinkan.\n";
+                return;
+            }
+
+            nodeBaru->next = START;
+            START = nodeBaru;
+            return;
+        }
+        Node * previous = START; // pointer untuk menyimpan alamat node sebelumnya, diinisialisasi dengan START
+        Node * current = START; // pointer untuk menyimpan alamat node saat ini, diinis
+
+        while (current != NULL && nim > current->noMhs)
+        {
+            if (nim == current->noMhs) 
+            {
+                cout << "\nDuplikasi noMhs tidak dijinkan.\n";
+                return;
+            }
+            previous = current;
+            current = current->next;
+        }
+        nodeBaru->next = current;
+        previous->next = nodeBaru;
     }
 
 };
