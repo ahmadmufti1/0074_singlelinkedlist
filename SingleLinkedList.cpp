@@ -115,3 +115,69 @@ class LinkedList{ // class untuk linked list
         }
     }
 };
+
+int main() // fungsi utama
+{
+    LinkedList mhs; // membuat objek linked list
+    int nim;
+    char ch;
+
+    do
+    {
+        cout << "\nMenu: \n";
+        cout << "1. Tambah Data ke dalam list\n";
+        cout << "2. Hapus Data dalam list\n";
+        cout << "3. Tampilkan Data dalam list\n";
+        cout << "4. Mencari data dalam list\n";
+        cout << "5. Keluar\n";
+        cout << "Pilih (1-5): ";
+        cin >> ch;
+
+        switch (ch)
+        {
+            case '1':
+                mhs.addNode(); // memanggil fungsi untuk menambahkan node baru
+                break;
+            case '2':
+            if (mhs.listEmpty()) 
+            {
+                cout << "\nList Kosong\n"; // jika linked list kosong, tampilkan pesan
+                break;
+            }
+                cout << "\nMasukkan Nomor Mahasiswa yang akan dihapus: ";
+                cin >> nim;
+
+                if (mhs.delNode(nim) == false) 
+                    cout << "\nData tidak ditemukan.\n"; // jika node tidak ditemukan, tampilkan pesan
+                else 
+                    cout <<"\nData dengan nim" << nim << "berhasil dihapus.\n"; // jika berhasil menghapus node, tampilkan pesan
+                    break;
+            case '3':
+                mhs.traverse();
+                break;
+            case '4':
+                if (mhs.listEmpty()) 
+                {
+                    cout << "\nList Kosong\n"; // jika linked list kosong, tampilkan pesan
+                    break;
+                }
+                Node * previous, * current;
+                cout << "\nMasukkan Nomor Mahasiswa yang akan dicari: ";
+                cin >> nim;
+
+                if (mhs.search(nim, previous, current) == false) 
+                cout << "\nData tidak ditemukan.\n"; // jika node tidak ditemukan, tampilkan pesan
+                else 
+                cout << "\nData ditemukan.\n"; // jika node ditemukan, tampilkan pesan
+                cout << "Nomor Mahasiswa: " << current->noMhs << endl; // tampilkan nomor mahasiswa pada node yang ditemukan
+                break;
+
+            case '5':
+                break;
+                
+            default:
+                cout << "\nPilihan tidak valid.\n";
+        }
+    } while (ch != '5'); // loop akan terus berjalan hingga user memilih untuk keluar (5)
+    return 0; // mengembalikan nilai 0 untuk menandakan program selesai dengan sukses
+}
