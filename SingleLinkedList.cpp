@@ -61,4 +61,18 @@ class LinkedList{ // class untuk linked list
         return START == NULL; // mengembalikan true jika START bernilai NULL, artinya linked list kosong
     }
 
+    bool search(int nim, Node *&previous, Node *&current) // fungsi untuk mencari node dengan nomor mahasiswa tertentu
+    {
+        previous = START; // menginisialisasi pointer previous dengan START
+        current = START; // menginisialisasi pointer current dengan START
+
+        while (current != NULL && nim != current->noMhs)
+        {
+            previous = current; // update pointer previous ke current
+            current = current->next; // update pointer current ke node selanjutnya
+        }
+
+        return (current != NULL);
+    }
+
 };
