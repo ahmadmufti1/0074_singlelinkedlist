@@ -8,3 +8,7 @@ class Node { // class untuk node
     int noMhs; // data yang akan disimpan dalam node, dalam hal ini nomor mahasiswa
     Node * next; // pointer untuk menyimpan alamat node selanjutnya
 };
+
+class LinkedList{ // class untuk linked list
+    
+};
