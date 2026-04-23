@@ -95,4 +95,23 @@ class LinkedList{ // class untuk linked list
         return true; // kembalikan true setelah berhasil menghapus node
     }
 
+    void traverse() //Untuk menampilkan list yang ada
+    {
+        if (listEmpty()) // memeriksa apakah linked list kosong
+        {
+            cout << "\nList Kosong\n"; // jika kosong, tampilkan pesan
+        }
+        else
+        {
+            cout << "\nData dalam list: \n"; // jika tidak kosong, tampilkan data dalam list
+            Node * currentNode = START;
+
+            while (currentNode != NULL)
+            {
+                cout << currentNode->noMhs << " "; // tampilkan nomor mahasiswa pada node saat ini
+                currentNode = currentNode->next; // update currentNode ke node berikutnya
+            }
+            cout << endl; 
+        }
+    }
 };
