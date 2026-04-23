@@ -4,6 +4,7 @@ using namespace std;
 
 
 class Node { // class untuk node
-    
+    public: // public agar bisa diakses dari luar class
+    int noMhs; // data yang akan disimpan dalam node, dalam hal ini nomor mahasiswa
+    Node * next; // pointer untuk menyimpan alamat node selanjutnya
 };
-
