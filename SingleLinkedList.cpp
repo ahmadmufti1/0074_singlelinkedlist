@@ -2,3 +2,8 @@
 #include <string>// library untuk string
 using namespace std;
 
+
+class Node { // class untuk node
+    
+};
+
